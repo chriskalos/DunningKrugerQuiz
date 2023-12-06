@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
+import json
+import os
 
 class QuizApp:
     def __init__(self, master):
@@ -21,8 +23,8 @@ class QuizApp:
         self.center_window()
 
     def center_window(self):
-        window_width = 400
-        window_height = 300
+        window_width = 800
+        window_height = 600
 
         # Get the screen dimension
         screen_width = self.master.winfo_screenwidth()
@@ -45,8 +47,21 @@ class QuizApp:
             tk.Button(self.master, text=subject, command=lambda subj=subject: self.subject_selected(subj)).pack()
 
     def subject_selected(self, subject):
-        # Placeholder for what happens when a subject is selected
-        messagebox.showinfo("Subject Selected", f"You have selected {subject}")
+        # Convert subject name to filename
+        filename = subject.replace(" ", "").lower() + '.json'
+        
+        # Check if file exists
+        if not os.path.exists(filename):
+            messagebox.showerror("Error", f"Quiz file for {subject} not found.")
+            return
+
+        # Load questions and answers from JSON file
+        with open(filename, 'r') as file:
+            data = json.load(file)
+            self.questions = [q['question'] for q in data['questions']]
+            self.options = {q['question']: q['options'] for q in data['questions']}
+            self.correct_answers_map = {q['question']: q['correct_answer'] for q in data['questions']}
+
         # Call the first screen setup after a subject is selected
         self.setup_first_screen()
 
@@ -59,38 +74,19 @@ class QuizApp:
         self.correct_answers = 0
         self.current_question_index = 0
 
-        # Questions and answers (You can replace these texts without changing the logic)
-        self.questions = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10"]
-        self.options = {
-            "Q1": ["Option 1", "Option 2", "Option 3", "Option 4"],
-            "Q2": ["Option 1", "Option 2", "Option 3", "Option 4"],
-            "Q3": ["Option 1", "Option 2", "Option 3", "Option 4"],
-            "Q4": ["Option 1", "Option 2", "Option 3", "Option 4"],
-            "Q5": ["Option 1", "Option 2", "Option 3", "Option 4"],
-            "Q6": ["Option 1", "Option 2", "Option 3", "Option 4"],
-            "Q7": ["Option 1", "Option 2", "Option 3", "Option 4"],
-            "Q8": ["Option 1", "Option 2", "Option 3", "Option 4"],
-            "Q9": ["Option 1", "Option 2", "Option 3", "Option 4"],
-            "Q10": ["Option 1", "Option 2", "Option 3", "Option 4"],
-            # Add options for other questions
-        }
+        # Initialize quiz data structures
+        self.questions = []
+        self.options = {}
+        self.correct_answers_map = {}
 
-        # Correct answers mapping (Q1: "Option 1", ...)
-        self.correct_answers_map = {
-            "Q1": "Option 1",
-            "Q2": "Option 1",
-            "Q3": "Option 1",
-            "Q4": "Option 1",
-            "Q5": "Option 1",
-            "Q6": "Option 1",
-            "Q7": "Option 1",
-            "Q8": "Option 1",
-            "Q9": "Option 1",
-            "Q10": "Option 1",
-            # Map other questions to their correct options
-        }
+        # Subjects and related data (placeholders for now)
+        self.subjects = ["Photography", "Computer Science", "Nature", "Physics", "Mathematics", "Cooking"]
 
-        self.setup_first_screen()
+        # Call the method to set up the zeroth screen
+        self.setup_zeroth_screen()
+
+        # Center the window
+        self.center_window()
 
     def calculate_score(self, choice, correct_answers):
         if choice in [1, 2]:
@@ -114,8 +110,13 @@ class QuizApp:
                 return 60 + (correct_answers - 5) * 8  # Ensures score is within 60-100
 
     def setup_first_screen(self):
+       # Clear the current screen, if any
+        for widget in self.master.winfo_children():
+            widget.destroy() 
+        
         # Add radio buttons for 1 to 5
-        tk.Label(self.master, text="How likely are you to recommend our quiz? (1-5)").pack()
+        tk.Label(self.master, text="How confident are you in this subject?").pack()
+        tk.Label(self.master, text="(1 = I know nothing - 5 = I'm an expert)").pack()
         for i in range(1, 6):
             tk.Radiobutton(self.master, text=str(i), variable=self.user_choice, value=i).pack()
 
