@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "What is the process of cooking food in water just below boiling point called?",
+            "options": ["Boiling", "Simmering", "Steaming", "Poaching"],
+            "correct_answer": "Simmering"
+        },
+        {
+            "question": "What is the main ingredient in a traditional 'Ratatouille'?",
+            "options": ["Potatoes", "Zucchini", "Tomatoes", "Eggplants"],
+            "correct_answer": "Eggplants"
+        },
+        {
+            "question": "Which cooking technique involves submerging food in a liquid at a relatively low temperature?",
+            "options": ["Frying", "Braising", "Grilling", "Poaching"],
+            "correct_answer": "Poaching"
+        },
+        {
+            "question": "What is 'sous-vide' cooking?",
+            "options": ["Cooking food in a vacuum-sealed bag in a water bath at a precise temperature", "A fast-cooking method using high heat", "A traditional French baking technique", "Slow cooking in an oven at low temperature"],
+            "correct_answer": "Cooking food in a vacuum-sealed bag in a water bath at a precise temperature"
+        },
+        {
+            "question": "What is 'umami'?",
+            "options": ["A type of Japanese sushi", "A cooking method used in Korean cuisine", "A basic taste characterized by savoriness", "A spice used in Thai cooking"],
+            "correct_answer": "A basic taste characterized by savoriness"
+        },
+        {
+            "question": "What is 'mise en place' in culinary terms?",
+            "options": ["A French pastry technique", "A cooking method using high heat", "The organization and arrangement of ingredients before cooking", "A plating style in fine dining"],
+            "correct_answer": "The organization and arrangement of ingredients before cooking"
+        },
+        {
+            "question": "What is 'chiffonade'?",
+            "options": ["A technique for making a light, fluffy cake", "A method of finely slicing herbs or leafy vegetables", "A French method of making omelets", "A style of presenting sauces on a plate"],
+            "correct_answer": "A method of finely slicing herbs or leafy vegetables"
+        },
+        {
+            "question": "What is 'tempering' in the context of chocolate?",
+            "options": ["Melting chocolate with a small amount of liquid", "A technique for combining hot and cold chocolate mixtures", "A method of heating and cooling chocolate to stabilize it for making candies and confections", "Freezing chocolate to enhance its flavor"],
+            "correct_answer": "A method of heating and cooling chocolate to stabilize it for making candies and confections"
+        },
+        {
+            "question": "What is 'gastronomic brûlée' technique?",
+            "options": ["A method of grilling meats at very high temperatures", "A technique for caramelizing the surface of a food, typically using a blowtorch", "A traditional way of preparing fermented foods", "A style of cooking using only raw ingredients"],
+            "correct_answer": "A technique for caramelizing the surface of a food, typically using a blowtorch"
+        },
+        {
+            "question": "What is 'nixtamalization'?",
+            "options": ["A process for preparing maize, where the grain is soaked and cooked in an alkaline solution, usually limewater, and then hulled", "A fermentation technique used in making bread", "A method for smoking meats over low heat", "A style of preserving fruits in sugar syrups"],
+            "correct_answer": "A process for preparing maize, where the grain is soaked and cooked in an alkaline solution, usually limewater, and then hulled"
+        }
+    ]
+}

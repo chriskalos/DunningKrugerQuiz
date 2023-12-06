@@ -1,0 +1,59 @@
+{
+    "questions": [
+        {
+            "question": "What is the value of π (pi) rounded to two decimal places?",
+            "options": ["3.14", "3.15", "3.16", "3.13"],
+            "correct_answer": "3.14"
+        },
+        {
+            "question": "What is the Pythagorean theorem?",
+            "options": ["A² + B² = C²", "A² - B² = C²", "A² + B² = C", "A³ + B³ = C³"],
+            "correct_answer": "A² + B² = C²"
+        },
+        {
+            "question": "What does the term 'integral' refer to in calculus?",
+            "options": ["The rate of change of a function", "The slope of a curve at a point", "The area under a curve", "The length of a curve"],
+            "correct_answer": "The area under a curve"
+        },
+        {
+            "question": "What is the 'Fibonacci sequence'?",
+            "options": ["A sequence where each number is the sum of the two preceding ones, starting from 0 and 1", "A sequence where each number is the product of the two preceding ones", "A sequence of prime numbers", "A sequence of even numbers"],
+            "correct_answer": "A sequence where each number is the sum of the two preceding ones, starting from 0 and 1"
+        },
+        {
+            "question": "What is the 'Four Color Theorem' in mathematics?",
+            "options": [
+                "A theorem stating that four colors are sufficient to color the regions of any map in such a way that no two adjacent regions have the same color",
+                "A theorem in linear algebra related to the four fundamental subspaces",
+                "A principle in geometry stating that four colors are needed to color any plane without overlapping",
+                "A hypothesis in number theory involving four different colors and their properties"
+            ],
+            "correct_answer": "A theorem stating that four colors are sufficient to color the regions of any map in such a way that no two adjacent regions have the same color"
+        },        
+        {
+            "question": "What is 'Gödel’s incompleteness theorem'?",
+            "options": ["A theorem that states every non-trivial computer program contains at least one bug", "A theorem stating that within any given branch of mathematics, there are some propositions that can't be proved or disproved", "A theorem that defines the solution to any algebraic equation", "A theorem about the limits of proof and computation"],
+            "correct_answer": "A theorem stating that within any given branch of mathematics, there are some propositions that can't be proved or disproved"
+        },
+        {
+            "question": "What is 'Banach-Tarski Paradox' in mathematics?",
+            "options": ["A paradox stating that it is possible to decompose a solid ball into a finite number of pieces and reassemble them into two solid balls, each the same size as the original", "A theory in calculus describing the behavior of infinite series", "A paradox in number theory related to the distribution of prime numbers", "A principle in algebraic topology about the transformation of shapes"],
+            "correct_answer": "A paradox stating that it is possible to decompose a solid ball into a finite number of pieces and reassemble them into two solid balls, each the same size as the original"
+        },        
+        {
+            "question": "What is the 'Riemann Hypothesis'?",
+            "options": ["A hypothesis about the distribution of the zeros of the Riemann zeta function", "A theory about the solution of non-linear equations", "A hypothesis in statistical mechanics", "A conjecture relating the prime numbers to the solution of differential equations"],
+            "correct_answer": "A hypothesis about the distribution of the zeros of the Riemann zeta function"
+        },
+        {
+            "question": "What is 'Erdős number' in the context of mathematics?",
+            "options": ["A unique number assigned to every mathematician based on their collaborative distance from mathematician Paul Erdős", "A number representing the complexity of a mathematical problem", "A constant used in logarithmic calculations", "A special type of prime number discovered by Paul Erdős"],
+            "correct_answer": "A unique number assigned to every mathematician based on their collaborative distance from mathematician Paul Erdős"
+        },
+        {
+            "question": "What is the 'Langlands Program' in mathematics?",
+            "options": ["A computer program developed for solving complex algebraic equations", "A set of conjectures and theorems about relationships between number theory and geometry", "A program for calculating probabilities in quantum mechanics", "A series of lectures by mathematician Robert Langlands"],
+            "correct_answer": "A set of conjectures and theorems about relationships between number theory and geometry"
+        }
+    ]
+}

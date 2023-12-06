@@ -28,12 +28,19 @@ class QuizApp:
         for widget in self.master.winfo_children():
             widget.destroy()
 
+        # Create a title label above the grid
+        title_label = tk.Label(self.master, text="Choose a topic", font=('Helvetica', 32, 'bold'))
+        title_label.grid(row=0, column=0, columnspan=3, sticky='nsew')
+
         # Set up a grid for subject selection buttons
-        rows = 2
+        rows = 3  # Adjusted to include the title row
         cols = 3
+        button_padx = 10
+        button_pady = 10
         for i, subject in enumerate(self.subjects):
-            btn = tk.Button(self.master, text=subject, command=lambda subj=subject: self.subject_selected(subj))
-            btn.grid(row=i // cols, column=i % cols, sticky='nsew')
+            btn = tk.Button(self.master, text=subject, command=lambda subj=subject: self.subject_selected(subj), font=('Helvetica', 24))
+            # Place buttons in grid starting from the second row to leave space for the title
+            btn.grid(row=(i // cols) + 1, column=i % cols, sticky='nsew', padx=button_padx, pady=button_pady)
 
         # Configure grid rows and columns to expand equally
         for i in range(rows):

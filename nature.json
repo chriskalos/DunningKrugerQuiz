@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "What is photosynthesis?",
+            "options": ["The process plants use to absorb nutrients from the soil", "The process by which plants convert sunlight into chemical energy", "The process of water evaporation in plants", "The growth of plants towards light"],
+            "correct_answer": "The process by which plants convert sunlight into chemical energy"
+        },
+        {
+            "question": "Which gas do plants primarily absorb from the atmosphere for photosynthesis?",
+            "options": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+            "correct_answer": "Carbon Dioxide"
+        },
+        {
+            "question": "What is the primary cause of tides on Earth?",
+            "options": ["The rotation of the Earth", "Wind and weather patterns", "The gravitational pull of the Moon", "The gravitational pull of the Sun"],
+            "correct_answer": "The gravitational pull of the Moon"
+        },
+        {
+            "question": "What is allelopathy in botany?",
+            "options": ["The study of plant diseases", "The process by which plants communicate with each other", "The phenomenon where certain plants release chemicals that inhibit the growth of nearby plants", "The symbiotic relationship between plants and fungi"],
+            "correct_answer": "The phenomenon where certain plants release chemicals that inhibit the growth of nearby plants"
+        },
+        {
+            "question": "What is the 'Lotka-Volterra equation' used to describe in ecology?",
+            "options": ["The population dynamics of a predator-prey system", "The rate of photosynthesis in plants", "The nutrient cycling in ecosystems", "The migration patterns of birds"],
+            "correct_answer": "The population dynamics of a predator-prey system"
+        },
+        {
+            "question": "What is 'island biogeography'?",
+            "options": ["The study of isolated landforms and their effect on species evolution", "The geological study of island formation", "The biodiversity found exclusively on islands", "The cultural study of island populations"],
+            "correct_answer": "The study of isolated landforms and their effect on species evolution"
+        },
+        {
+            "question": "What is 'anoxic event' in the context of oceanography?",
+            "options": ["An event where ocean currents stop", "A situation where a large area of water lacks oxygen, often leading to mass extinctions", "A phenomenon where ocean temperatures rise rapidly", "The process of sea floor spreading"],
+            "correct_answer": "A situation where a large area of water lacks oxygen, often leading to mass extinctions"
+        },
+        {
+            "question": "What is 'C3 and C4 photosynthesis'?",
+            "options": ["Two different types of camera models used in wildlife photography", "Two stages in the life cycle of a plant", "Two different pathways that plants use to fix carbon during photosynthesis", "Classification of plants based on their carbon absorption"],
+            "correct_answer": "Two different pathways that plants use to fix carbon during photosynthesis"
+        },
+        {
+            "question": "What is 'Myrmecochory'?",
+            "options": ["The study of ant behavior", "The dispersal of seeds by ants", "A type of symbiosis between ants and fungi", "A fungal infection in plants spread by ants"],
+            "correct_answer": "The dispersal of seeds by ants"
+        },
+        {
+            "question": "What is 'Zygomycosis' in the context of fungal biology?",
+            "options": ["A form of fungal reproduction", "A classification of fungi based on their spore structure", "A serious fungal infection caused by organisms in the phylum Zygomycota", "A genetic mutation in fungi leading to altered growth forms"],
+            "correct_answer": "A serious fungal infection caused by organisms in the phylum Zygomycota"
+        }
+    ]
+}

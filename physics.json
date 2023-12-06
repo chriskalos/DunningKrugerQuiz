@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "What is the speed of light in a vacuum?",
+            "options": ["299,792,458 meters per second", "150,000,000 meters per second", "100,000,000 meters per second", "1,000,000,000 meters per second"],
+            "correct_answer": "299,792,458 meters per second"
+        },
+        {
+            "question": "What is Newton's First Law of Motion?",
+            "options": ["For every action, there is an equal and opposite reaction", "Force equals mass times acceleration", "A body in motion stays in motion, and a body at rest stays at rest unless acted upon by an external force", "The force of gravity between two objects is proportional to the mass of the objects and inversely proportional to the square of the distance between them"],
+            "correct_answer": "A body in motion stays in motion, and a body at rest stays at rest unless acted upon by an external force"
+        },
+        {
+            "question": "What is the unit of electrical resistance?",
+            "options": ["Volt", "Watt", "Ampere", "Ohm"],
+            "correct_answer": "Ohm"
+        },
+        {
+            "question": "What is the concept of 'spacetime curvature' in General Relativity?",
+            "options": ["The idea that space and time are interwoven into a single continuum", "The bending of spacetime by mass and energy, which is responsible for the phenomenon of gravity", "A theory that describes the expansion of the universe", "The warping of space due to electromagnetic radiation"],
+            "correct_answer": "The bending of spacetime by mass and energy, which is responsible for the phenomenon of gravity"
+        },
+        {
+            "question": "In quantum mechanics, what is 'superposition'?",
+            "options": ["The principle that particles can be in multiple states simultaneously until measured", "The theory that all particles are interconnected", "A state where particles exist at super-fast speeds", "The concept that particles can exist in two places at once"],
+            "correct_answer": "The principle that particles can be in multiple states simultaneously until measured"
+        },
+        {
+            "question": "What is the 'Pauli exclusion principle'?",
+            "options": ["A rule that no two identical fermions can occupy the same quantum state within a quantum system simultaneously", "The principle that energy levels in an atom are quantized", "A theory explaining the exclusion of certain wavelengths in a spectral line", "The concept that particles exclude one another due to electromagnetic force"],
+            "correct_answer": "A rule that no two identical fermions can occupy the same quantum state within a quantum system simultaneously"
+        },
+        {
+            "question": "What is 'Bell's theorem' in quantum physics?",
+            "options": ["A theorem that suggests quantum mechanics is fundamentally probabilistic", "A concept that disproves the existence of hidden variable theories", "A principle dealing with inequalities concerning human understanding of the physical properties of quantum systems", "The theory that all electrons behave as both particles and waves"],
+            "correct_answer": "A principle dealing with inequalities concerning human understanding of the physical properties of quantum systems"
+        },
+        {
+            "question": "What is the 'Chandrasekhar limit'?",
+            "options": ["The maximum mass of a stable white dwarf star", "The limit beyond which a black hole cannot form", "The boundary at which neutron degeneracy pressure prevents further gravitational collapse", "The theoretical radius of a supermassive black hole"],
+            "correct_answer": "The maximum mass of a stable white dwarf star"
+        },
+        {
+            "question": "What is 'Sakharov's criteria' in cosmology?",
+            "options": ["Conditions necessary for a universe to undergo inflation", "Criteria required for the generation of matter-antimatter asymmetry in the universe", "The guidelines for the formation of galaxies in the early universe", "The parameters defining the expansion rate of the universe"],
+            "correct_answer": "Criteria required for the generation of matter-antimatter asymmetry in the universe"
+        },
+        {
+            "question": "What is the 'Aharonov-Bohm effect'?",
+            "options": ["A quantum mechanical phenomenon where an electrically charged particle is affected by electromagnetic fields,\ndespite being confined to regions where both the magnetic field and electric field are zero", "A theory about the interaction between light and matter", "A phenomenon where particles exhibit wave-like behavior", "An effect related to the acceleration of particles to near-light speeds"],
+            "correct_answer": "A quantum mechanical phenomenon where an electrically charged particle is affected by electromagnetic fields,\ndespite being confined to regions where both the magnetic field and electric field are zero"
+        }
+    ]
+}
