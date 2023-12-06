@@ -4,26 +4,8 @@ import json
 import os
 
 class QuizApp:
-    def __init__(self, master):
-        self.master = master
-        self.master.title("Quiz App")
-
-        # Initialize variables
-        self.user_choice = tk.IntVar(value=1)
-        self.correct_answers = 0
-        self.current_question_index = 0
-
-        # Subjects and related data (placeholders for now)
-        self.subjects = ["Photography", "Computer Science", "Nature", "Physics", "Mathematics", "Cooking"]
-        
-        # Call the method to set up the zeroth screen
-        self.setup_zeroth_screen()
-
-        # Center the window
-        self.center_window()
-
     def center_window(self):
-        window_width = 800
+        window_width = 1020
         window_height = 600
 
         # Get the screen dimension
@@ -42,9 +24,18 @@ class QuizApp:
         for widget in self.master.winfo_children():
             widget.destroy()
 
-        # Layout for subject selection buttons
-        for subject in self.subjects:
-            tk.Button(self.master, text=subject, command=lambda subj=subject: self.subject_selected(subj)).pack()
+        # Set up a grid for subject selection buttons
+        rows = 2
+        cols = 3
+        for i, subject in enumerate(self.subjects):
+            btn = tk.Button(self.master, text=subject, command=lambda subj=subject: self.subject_selected(subj))
+            btn.grid(row=i // cols, column=i % cols, sticky='nsew')
+
+        # Configure grid rows and columns to expand equally
+        for i in range(rows):
+            self.master.grid_rowconfigure(i, weight=1)
+        for i in range(cols):
+            self.master.grid_columnconfigure(i, weight=1)
 
     def subject_selected(self, subject):
         # Convert subject name to filename
@@ -110,18 +101,22 @@ class QuizApp:
                 return 60 + (correct_answers - 5) * 8  # Ensures score is within 60-100
 
     def setup_first_screen(self):
-       # Clear the current screen, if any
+    # Clear the current screen, if any
         for widget in self.master.winfo_children():
-            widget.destroy() 
-        
+            widget.destroy()
+
+        # Create a frame for the radio buttons and labels
+        frame = tk.Frame(self.master)
+        frame.pack(expand=True)
+
         # Add radio buttons for 1 to 5
-        tk.Label(self.master, text="How confident are you in this subject?").pack()
-        tk.Label(self.master, text="(1 = I know nothing - 5 = I'm an expert)").pack()
+        tk.Label(frame, text="How confident are you in this subject?").pack()
+        tk.Label(frame, text="(1 = I know nothing - 5 = I'm an expert)").pack()
         for i in range(1, 6):
-            tk.Radiobutton(self.master, text=str(i), variable=self.user_choice, value=i).pack()
+            tk.Radiobutton(frame, text=str(i), variable=self.user_choice, value=i).pack()
 
         # Add a 'Next' button to go to the first question
-        tk.Button(self.master, text="Next", command=self.next_question).pack()
+        tk.Button(frame, text="Next", command=self.next_question).pack()
 
     def next_question(self):
         if self.current_question_index < len(self.questions):
@@ -136,15 +131,20 @@ class QuizApp:
         for widget in self.master.winfo_children():
             widget.destroy()
 
-        # Add the current question and its options
-        tk.Label(self.master, text=question).pack()
+        # Create a frame for the radio buttons
+        frame = tk.Frame(self.master)
+        frame.pack(expand=True)
+
+        # Add the current question
+        tk.Label(frame, text=question).pack()
+
+        # Radio buttons aligned to the left
         user_answer = tk.StringVar(value="None")
-
         for option in self.options[question]:
-            tk.Radiobutton(self.master, text=option, variable=user_answer, value=option).pack()
+            tk.Radiobutton(frame, text=option, variable=user_answer, value=option, anchor='w').pack(fill='x')
 
-        # Check the answer when moving to the next question
-        tk.Button(self.master, text="Next Question", command=lambda: self.check_answer(question, user_answer.get())).pack()
+        # Next Question button
+        tk.Button(frame, text="Next Question", command=lambda: self.check_answer(question, user_answer.get())).pack()
 
     def check_answer(self, question, selected_option):
         if selected_option == self.correct_answers_map[question]:

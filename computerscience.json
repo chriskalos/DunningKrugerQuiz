@@ -1,15 +1,54 @@
 {
     "questions": [
         {
-            "question": "What does CPU stand for?",
-            "options": ["Central Process Unit", "Computer Personal Unit", "Central Processing Unit", "Central Processor Unit"],
+            "question": "What does CPU stand for in computer science?",
+            "options": ["Central Processing Unit", "Computer Processing Unit", "Central Performance Unit", "Computer Performance Unit"],
             "correct_answer": "Central Processing Unit"
         },
         {
-            "question": "In what year was the Python language developed?",
-            "options": ["1989", "1991", "2000", "1995"],
-            "correct_answer": "1991"
+            "question": "What is the primary purpose of RAM in a computer?",
+            "options": ["Permanent data storage", "Increase internet speed", "Temporary data storage for quick access", "Improve graphics quality"],
+            "correct_answer": "Temporary data storage for quick access"
+        },
+        {
+            "question": "Which algorithm is used for web page ranking by Google's search engine?",
+            "options": ["QuickSort", "PageRank", "Binary Search", "Bubble Sort"],
+            "correct_answer": "PageRank"
+        },
+        {
+            "question": "Which data structure uses LIFO (Last In, First Out) principle?",
+            "options": ["Queue", "Stack", "Array", "Linked List"],
+            "correct_answer": "Stack"
+        },
+        {
+            "question": "What is a 'deadlock' in computer science?",
+            "options": ["A type of security breach where the attacker locks the system administrators out from their accounts", "A malfunction in the CPU that causes a blue screen", "A situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process", "An error in a database system where key elements are deleted"],
+            "correct_answer": "A situation where a set of processes are blocked because each process is holding a resource and waiting for another resource acquired by some other process"
+        },
+        {
+            "question": "What is 'NP-hard' in computational complexity theory?",
+            "options": ["A type of algorithm that runs in polynomial time", "A class of problems that are, informally, 'at least as hard as the hardest problems in NP'", "A problem that can be solved in constant time", "A coding competition for university students that takes place in Orlando, Florida"],
+            "correct_answer": "A class of problems that are, informally, 'at least as hard as the hardest problems in NP'"
+        },
+        {
+            "question": "What is the main difference between a 'process' and a 'thread' in operating systems?",
+            "options": ["A process is a program in execution, a thread is a lightweight process", "A thread is used for small tasks, while a process is used for more 'heavy duty' tasks", "A process can contain multiple threads", "Both A and C"],
+            "correct_answer": "Both A and C"
+        },
+        {
+            "question": "In the context of databases, what does 'ACID' stand for?",
+            "options": ["Alignment, Consistency, Isolation, Durability", "Atomicity, Consistency, Isolation, Durability", "Asynchronous, Compression, Integrity, Density", "Allocation, Concurrency, Indexing, Data Mining"],
+            "correct_answer": "Atomicity, Consistency, Isolation, Durability"
+        },
+        {
+            "question": "What is the 'CAP Theorem' in distributed computing?",
+            "options": ["It asserts that it is impossible for a distributed data store to simultaneously provide more than two out of three guarantees: Consistency, Availability, Partition Tolerance", "It states that CPU, Application, and Performance are the three pillars of computing", "It describes the capabilities of computer architecture", "It is a theorem about the limitations of algorithms"],
+            "correct_answer": "It asserts that it is impossible for a distributed data store to simultaneously provide more than two out of three guarantees: Consistency, Availability, Partition Tolerance"
+        },
+        {
+            "question": "What is the Curry-Howard correspondence in computer science?",
+            "options": ["A direct relationship between software and hardware", "An analogy between computer programs and mathematical proofs", "A protocol for secure communication over the internet", "A theory in artificial intelligence relating to machine learning algorithms"],
+            "correct_answer": "An analogy between computer programs and mathematical proofs"
         }
-        
     ]
 }
