@@ -42,8 +42,8 @@
         },
         {
             "question": "What is the 'CAP Theorem' in distributed computing?",
-            "options": ["It asserts that it is impossible for a distributed data store to simultaneously provide more than two out of three guarantees: Consistency, Availability, Partition Tolerance", "It states that CPU, Application, and Performance are the three pillars of computing", "It describes the capabilities of computer architecture", "It is a theorem about the limitations of algorithms"],
-            "correct_answer": "It asserts that it is impossible for a distributed data store to simultaneously provide more than two out of three guarantees: Consistency, Availability, Partition Tolerance"
+            "options": ["\"It is impossible for a distributed data store to simultaneously provide more than two out of three guarantees:\nConsistency, Availability, Partition Tolerance\"", "It states that CPU, Application, and Performance are the three pillars of computing", "It describes the capabilities of computer architecture", "It is a theorem about the limitations of algorithms"],
+            "correct_answer": "\"It is impossible for a distributed data store to simultaneously provide more than two out of three guarantees:\nConsistency, Availability, Partition Tolerance\""
         },
         {
             "question": "What is the Curry-Howard correspondence in computer science?",
