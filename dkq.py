@@ -2,21 +2,53 @@ import tkinter as tk
 from tkinter import messagebox
 
 class QuizApp:
-    # def __init__(self, master):
-    #     self.master = master
-    #     self.master.title("Quiz App")
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Quiz App")
 
-    #     # Initialize variables
-    #     self.user_choice = tk.IntVar(value=1)
-    #     self.correct_answers = 0
-    #     self.questions_answers = {
-    #         "Q1": "A1", "Q2": "A2", "Q3": "A3", "Q4": "A4", "Q5": "A5",
-    #         "Q6": "A6", "Q7": "A7", "Q8": "A8", "Q9": "A9", "Q10": "A10"
-    #     }
-    #     self.user_answers = {}
+        # Initialize variables
+        self.user_choice = tk.IntVar(value=1)
+        self.correct_answers = 0
+        self.current_question_index = 0
 
-    #     # First screen setup
-    #     self.setup_first_screen()
+        # Subjects and related data (placeholders for now)
+        self.subjects = ["Photography", "Computer Science", "Nature", "Physics", "Mathematics", "Cooking"]
+        
+        # Call the method to set up the zeroth screen
+        self.setup_zeroth_screen()
+
+        # Center the window
+        self.center_window()
+
+    def center_window(self):
+        window_width = 400
+        window_height = 300
+
+        # Get the screen dimension
+        screen_width = self.master.winfo_screenwidth()
+        screen_height = self.master.winfo_screenheight()
+
+        # Find the center position
+        center_x = int(screen_width / 2 - window_width / 2)
+        center_y = int(screen_height / 2 - window_height / 2)
+
+        # Set the window size and position
+        self.master.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
+
+    def setup_zeroth_screen(self):
+        # Clear the current screen
+        for widget in self.master.winfo_children():
+            widget.destroy()
+
+        # Layout for subject selection buttons
+        for subject in self.subjects:
+            tk.Button(self.master, text=subject, command=lambda subj=subject: self.subject_selected(subj)).pack()
+
+    def subject_selected(self, subject):
+        # Placeholder for what happens when a subject is selected
+        messagebox.showinfo("Subject Selected", f"You have selected {subject}")
+        # Call the first screen setup after a subject is selected
+        self.setup_first_screen()
 
     def __init__(self, master):
         self.master = master

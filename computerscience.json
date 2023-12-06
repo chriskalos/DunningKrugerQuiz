@@ -1,0 +1,15 @@
+{
+    "questions": [
+        {
+            "question": "What does CPU stand for?",
+            "options": ["Central Process Unit", "Computer Personal Unit", "Central Processing Unit", "Central Processor Unit"],
+            "correct_answer": "Central Processing Unit"
+        },
+        {
+            "question": "In what year was the Python language developed?",
+            "options": ["1989", "1991", "2000", "1995"],
+            "correct_answer": "1991"
+        }
+        
+    ]
+}
