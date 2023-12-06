@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science Quiz</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4">Computer Science Quiz</h1>
+        <form id="quiz-form">
+            <!-- Questions will be dynamically inserted here -->
+            <div id="questions-container"></div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+        <div id="result-container" class="mt-3">
+            <div id="result-line" class="result-line"></div>
+            <div id="result-dot" class="result-dot"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

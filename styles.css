@@ -1,7 +1,18 @@
-/* Custom CSS styles */
-body {
-    padding-top: 20px;
+.result-line {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: relative;
+    margin-top: 20px; /* Add some space above the line */
 }
-.question {
-    margin-bottom: 15px;
+
+.result-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: -4px; /* Adjust to center the dot on the line */
+    left: 0;
+    display: none; /* Initially hide the dot */
 }
