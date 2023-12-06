@@ -64,6 +64,9 @@ class QuizApp:
         self.master = master
         self.master.title("Quiz App")
 
+        # Bind the close event to the close function
+        self.master.protocol("WM_DELETE_WINDOW", self.on_close)
+
         # Initialize variables
         self.user_choice = tk.IntVar(value=1)
         self.correct_answers = 0
@@ -82,6 +85,12 @@ class QuizApp:
 
         # Center the window
         self.center_window()
+
+    def on_close(self):
+        """Handler function to call when the window is closed."""
+        plt.close('all')  # Close all matplotlib plots
+        self.master.quit()  # Quit the Tkinter main loop
+        self.master.destroy()  # Destroy the Tkinter window
 
     def calculate_score(self, choice, correct_answers):
         if choice in [1, 2]:
@@ -172,36 +181,40 @@ class QuizApp:
 
         # Normalize the score to the X values range
         min_x, max_x = min(x_values), max(x_values)
-        normalized_score = min_x + (max_x - min_x) * score / 100
+        normalized_score = min_x + (max_x - min_x) * normalized_score
 
         # Use the spline function to find the corresponding Y value
         user_y = spl(normalized_score)
 
-        # Plotting the smooth curve
-        plt.plot(x_new, spl(x_new))
-        # Mark the user's position
-        plt.plot(normalized_score, user_y, 'ro')  # 'ro' for red dot
+        # Create a new figure and axis
+        fig, ax = plt.subplots()
 
-        # Annotate the user's score on the plot
-        plt.annotate(f"You are here!", (normalized_score, user_y), textcoords="offset points", xytext=(0,10), ha='center')
+        # Plotting the smooth curve on the axis
+        ax.plot(x_new, spl(x_new))
+        # Mark the user's position on the axis
+        ax.plot(normalized_score, user_y, 'ro')  # 'ro' for red dot
 
-        # Adding annotations
-        plt.text(20, 4, "Peak of Mount Stupid", horizontalalignment='center', verticalalignment='bottom')
-        plt.text(27, 1.6, "Valley of Despair", horizontalalignment='center', verticalalignment='top')
-        plt.text(55, 2, "Slope of Enlightenment", horizontalalignment='center', verticalalignment='bottom')
-        plt.text(88, 4, "Plateau of Sustainability", horizontalalignment='center', verticalalignment='bottom')
+        # Annotate the user's score on the axis
+        ax.annotate(f"You are here!", (normalized_score, user_y), textcoords="offset points", xytext=(0,10), ha='center')
 
-        # Add labels and title
-        plt.title("Your Position on the Dunning-Kruger Effect Curve")
-        plt.xlabel("Knowledge - Experience")
-        plt.ylabel("Confidence")
+        # Adding annotations directly on the axis
+        ax.text(20, 4, "Peak of Mount Stupid", horizontalalignment='center', verticalalignment='bottom')
+        ax.text(27, 1.6, "Valley of Despair", horizontalalignment='center', verticalalignment='top')
+        ax.text(55, 2, "Slope of Enlightenment", horizontalalignment='center', verticalalignment='bottom')
+        ax.text(88, 4, "Plateau of Sustainability", horizontalalignment='center', verticalalignment='bottom')
 
-        # canvas = FigureCanvasTkAgg(fig, master=self.master)
-        # canvas.draw()
-        # canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+        # Add labels and title to the axis
+        ax.set_title("Your Position on the Dunning-Kruger Effect Curve")
+        ax.set_xlabel("Knowledge - Experience")
+        ax.set_ylabel("Confidence")
+        ax.grid(True)
 
-        # Show the plot
-        plt.show()
+        # Embedding the figure in the Tkinter window
+        canvas = FigureCanvasTkAgg(fig, master=self.master)  # A tk.DrawingArea.
+        canvas.draw()
+        canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+        self.master.protocol("WM_DELETE_WINDOW", self.on_close)
 
     def calculate_and_display_score(self):
         # Clear the current screen

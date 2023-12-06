@@ -1,0 +1,54 @@
+{
+    "questions": [
+        {
+            "question": "What does 'ISO' in photography refer to?",
+            "options": ["Internal Shutter Opening", "Image Stability Option", "International Standards Organization", "Image Sensor Optimization"],
+            "correct_answer": "International Standards Organization"
+        },
+        {
+            "question": "What is the rule of thirds in photography?",
+            "options": ["A rule stating a photo should be divided into three parts", "A guideline proposing that an image should be imagined as divided into nine equal parts by two equally spaced horizontal lines and two equally spaced vertical lines", "A technique where the camera is divided into three pieces for better handling", "A rule that states the camera settings should always be in multiples of three"],
+            "correct_answer": "A guideline proposing that an image should be imagined as divided into nine equal parts by two equally spaced horizontal lines and two equally spaced vertical lines"
+        },
+        {
+            "question": "What does 'bokeh' refer to in photography?",
+            "options": ["The way the lens renders out-of-focus points of light", "A black and white photo", "A special kind of camera tripod", "A technique for panoramic shots"],
+            "correct_answer": "The way the lens renders out-of-focus points of light"
+        },
+        {
+            "question": "What is 'Circle of Confusion' in the context of photography?",
+            "options": ["A psychological state when a photographer cannot decide on the composition", "A type of lens defect leading to blurred images", "An optical spot caused by a cone of light rays from a lens not coming to a perfect point", "A group of photographers specializing in circular formations"],
+            "correct_answer": "An optical spot caused by a cone of light rays from a lens not coming to a perfect point"
+        },
+        {
+            "question": "What is the 'Sunny 16 Rule' in photography?",
+            "options": ["A rule for setting shutter speed on a sunny day", "A guideline that sets the aperture at f/16 on a sunny day", "A post-processing technique for sunny photographs", "A camera setting for taking photos in bright sunlight"],
+            "correct_answer": "A guideline that sets the aperture at f/16 on a sunny day"
+        },
+        {
+            "question": "What is 'reciprocity failure' in film photography?",
+            "options": ["The failure of a camera to properly sync with a flash", "The phenomenon where extra exposure time is needed for long exposures due to reduced film sensitivity", "A failure in the film development process", "A problem with digital-to-analog conversion in hybrid cameras"],
+            "correct_answer": "The phenomenon where extra exposure time is needed for long exposures due to reduced film sensitivity"
+        },
+        {
+            "question": "What is 'infrared photography'?",
+            "options": ["Photography using light from the infrared spectrum", "A style of photography that emphasizes warm colors", "A post-processing technique to add heat maps to images", "A type of photography used mainly for scientific research"],
+            "correct_answer": "Photography using light from the infrared spectrum"
+        },
+        {
+            "question": "What is the 'Bayer Filter' in digital photography?",
+            "options": ["A filter used to enhance colors in digital cameras", "A mosaic of tiny colored filters placed over the pixel sensors of an image sensor to capture color information", "A filter applied in post-processing to correct white balance", "A protective filter placed over camera lenses"],
+            "correct_answer": "A mosaic of tiny colored filters placed over the pixel sensors of an image sensor to capture color information"
+        },
+        {
+            "question": "What is the 'Schneider Kreuznach' phenomenon in photography?",
+            "options": ["A type of lens flare specific to Schneider Kreuznach lenses", "A rare optical effect found in high-quality lenses, leading to exceptionally sharp images", "A manufacturing defect found in some Schneider Kreuznach lenses in the 1970s", "A renowned style of portrait photography developed by Schneider Kreuznach"],
+            "correct_answer": "A rare optical effect found in high-quality lenses, leading to exceptionally sharp images"
+        },
+        {
+            "question": "What is 'Zernike phase contrast' in the context of photography?",
+            "options": ["A technique used in microscopy to convert phase shifts in light passing through a transparent specimen to brightness changes in the image", "A rare camera setting for enhancing contrast in low-light conditions", "A post-processing method for adjusting phase contrast in images", "A historical method of developing photographs using phase transition"],
+            "correct_answer": "A technique used in microscopy to convert phase shifts in light passing through a transparent specimen to brightness changes"
+        }
+    ]
+}
