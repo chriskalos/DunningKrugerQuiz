@@ -109,26 +109,46 @@ class QuizApp:
         self.master.quit()  # Quit the Tkinter main loop
         self.master.destroy()  # Destroy the Tkinter window
 
-    def calculate_score(self, choice, correct_answers):
-        if choice in [1, 2]:
-            if correct_answers > 3:
-                return 40 + (correct_answers - 4) * 4  # Ensures score is within 40-60
-            else:
-                return correct_answers  # Ensures score is within 1-10
+    def calculate_score(self, confidence, correct_answers):
+        # Convert correct answers count to a preliminary score of 0-100
+        preliminary_score = (correct_answers / 10) * 100
 
-        elif choice == 3:
-            if correct_answers < 2:
-                return correct_answers
-            elif correct_answers < 8:
-                return 41 + (correct_answers - 2) * 6  # Avoids 20-40 range
-            else:
-                return 89 + correct_answers  # Ensures high scores for good performance
+        # Define the allowed score ranges for each confidence level
+        allowed_ranges = {
+            5: [(4, 8), (64, 100)],
+            4: [(3, 3), (9, 9), (52, 63)],
+            3: [(2, 2), (10, 10), (42, 51)],
+            2: [(1, 1), (11, 13), (30, 41)],
+            1: [(0, 0.5), (14, 29)],
+        }
 
-        elif choice in [4, 5]:
-            if correct_answers < 5:
-                return 20 + correct_answers * 4  # Ensures score is within 20-40
-            else:
-                return 60 + (correct_answers - 5) * 8  # Ensures score is within 60-100
+        # Special exception for confidence 1 and score 20 or less
+        if confidence == 1 and preliminary_score <= 20:
+        return 0.5
+
+        # Find the closest score within the allowed range for the given confidence
+        def closest_allowed_score(score, ranges):
+            closest_score = None
+            min_distance = None
+            for start, end in ranges:
+                if start <= score <= end:
+                    return score  # The score is within the range
+                else:
+                    # Check the distance to the start and end of the range
+                    for point in [start, end]:
+                        distance = abs(score - point)
+                        if min_distance is None or distance < min_distance:
+                            closest_score = point
+                            min_distance = distance
+            return closest_score
+
+        # Get the allowed ranges for the given confidence
+        ranges = allowed_ranges.get(confidence, [])
+
+        # Calculate the final score
+        final_score = closest_allowed_score(preliminary_score, ranges)
+        return final_score
+
 
     def setup_first_screen(self):
     # Clear the current screen, if any

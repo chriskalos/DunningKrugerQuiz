@@ -44,7 +44,7 @@ def plot_score_on_curve(score):
     normalized_score = score / 100
 
     # Load dkecurve.json file for point data
-    with open('dkecurve.json') as json_file:
+    with open('curve/dkecurve.json') as json_file:
         json_data = json.load(json_file)
 
     x_values = json_data['x']
@@ -84,4 +84,4 @@ def plot_score_on_curve(score):
     # Show the plot
     plt.show()
 
-plot_score_on_curve(90)  # Example score of 70
+plot_score_on_curve(28)  # Example score
