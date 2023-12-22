@@ -1,11 +1,13 @@
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import ttk
 import json
 import os
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from scipy.interpolate import make_interp_spline, interp1d
+import glob
 
 class QuizApp:
     def center_window(self):
@@ -28,25 +30,33 @@ class QuizApp:
         for widget in self.master.winfo_children():
             widget.destroy()
 
-        # Create a title label above the grid
+        # Create a title label above the dropdown
         title_label = tk.Label(self.master, text="Choose a topic", font=('Helvetica', 32, 'bold'))
-        title_label.grid(row=0, column=0, columnspan=3, sticky='nsew')
+        title_label.pack(pady=(20, 10))  # Add some padding above and below the title
 
-        # Set up a grid for subject selection buttons
-        rows = 3  # Adjusted to include the title row
-        cols = 3
-        button_padx = 10
-        button_pady = 10
-        for i, subject in enumerate(self.subjects):
-            btn = tk.Button(self.master, text=subject, command=lambda subj=subject: self.subject_selected(subj), font=('Helvetica', 24))
-            # Place buttons in grid starting from the second row to leave space for the title
-            btn.grid(row=(i // cols) + 1, column=i % cols, sticky='nsew', padx=button_padx, pady=button_pady)
+        # Find all JSON files and extract their names
+        json_files = glob.glob('*.json')
+        self.subjects_info = {}  # Dictionary to map friendly names to filenames
 
-        # Configure grid rows and columns to expand equally
-        for i in range(rows):
-            self.master.grid_rowconfigure(i, weight=1)
-        for i in range(cols):
-            self.master.grid_columnconfigure(i, weight=1)
+        for file in json_files:
+            with open(file, 'r') as json_file:
+                data = json.load(json_file)
+                subject_name = data.get('name', 'Unknown')  # Default to 'Unknown' if no name is found
+                self.subjects_info[subject_name] = file  # Map the friendly name to its filename
+
+        # Create a combobox for subject selection with the friendly names
+        self.subject_combobox = ttk.Combobox(self.master, values=list(self.subjects_info.keys()), font=('Helvetica', 24), state="readonly")
+        self.subject_combobox.pack(pady=10)
+
+        # Select button to confirm the choice
+        select_button = tk.Button(self.master, text="Select", command=self.on_subject_select, font=('Helvetica', 24))
+        select_button.pack(pady=(0, 20))
+
+
+    def on_subject_select(self):
+        subject = self.subject_combobox.get()
+        if subject:
+            self.subject_selected(subject)
 
     def subject_selected(self, subject):
         # Convert subject name to filename
@@ -176,7 +186,7 @@ class QuizApp:
         normalized_score = score / 100
 
         # Load dkecurve.json file for point data
-        with open('dkecurve.json') as json_file:
+        with open('curve/dkecurve.json') as json_file:
             json_data = json.load(json_file)
 
         x_values = json_data['x']
