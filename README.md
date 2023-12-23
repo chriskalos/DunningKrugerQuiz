@@ -38,6 +38,7 @@ Note: On systems where both Python 2.x and Python 3.x are installed, you may nee
 To run the Dunning-Kruger Quiz Application, execute the following command in the terminal or command prompt:
 
 ```python dkq.py```
+
 Note: On systems where both Python 2.x and Python 3.x are installed, you may need to run `python3` instead of `python`:
 ```python3 dkq.py```
 
