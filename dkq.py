@@ -122,9 +122,21 @@ class QuizApp:
             1: [(0, 0.5), (14, 29)],
         }
 
-        # Special exception for confidence 1 and score 20 or less
+        # Special exception for low scores
         if confidence == 1 and preliminary_score <= 20:
-        return 0.5
+            return 0.5
+
+        else if confidence == 2 and preliminary_score <= 20:
+            return 1
+
+        else if confidence == 3 and preliminary_score <= 20:
+            return 2
+
+        else if confidence == 4 and preliminary_score <= 20:
+            return 3
+
+        else if confidence == 5 and preliminary_score <= 20:
+            return 6
 
         # Find the closest score within the allowed range for the given confidence
         def closest_allowed_score(score, ranges):
