@@ -122,6 +122,10 @@ class QuizApp:
             1: [(0, 0.5), (14, 29)],
         }
 
+        def map_score_to_range(score, old_min, old_max, new_min, new_max):
+        # Linearly map a score from the old range to the new range
+            return new_min + (new_max - new_min) * (score - old_min) / (old_max - old_min)
+
         # Special exception for low scores
         if confidence == 1 and preliminary_score <= 20:
             return 0.5
@@ -135,8 +139,9 @@ class QuizApp:
         else if confidence == 4 and preliminary_score <= 20:
             return 3
 
-        else if confidence == 5 and preliminary_score <= 20:
-            return 6
+        # Special handling for confidence 5 with score 40 or less
+        else if confidence == 5 and preliminary_score <= 40:
+            return map_score_to_range(preliminary_score, 0, 40, 4, 8)
 
         # Find the closest score within the allowed range for the given confidence
         def closest_allowed_score(score, ranges):

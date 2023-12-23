@@ -84,4 +84,4 @@ def plot_score_on_curve(score):
     # Show the plot
     plt.show()
 
-plot_score_on_curve(28)  # Example score
+plot_score_on_curve(47)  # Example score
