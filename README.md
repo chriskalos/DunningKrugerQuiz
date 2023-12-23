@@ -31,6 +31,7 @@ Before running the application, you need to install the required Python packages
 ```pip install -r requirements.txt```
 
 Note: On systems where both Python 2.x and Python 3.x are installed, you may need to run `pip3` instead of `pip`:
+
 ```pip3 install -r requirements.txt```
 
 4. **Running the Application**
@@ -40,6 +41,7 @@ To run the Dunning-Kruger Quiz Application, execute the following command in the
 ```python dkq.py```
 
 Note: On systems where both Python 2.x and Python 3.x are installed, you may need to run `python3` instead of `python`:
+
 ```python3 dkq.py```
 
 Follow the on-screen prompts to take the quiz and view your results.
